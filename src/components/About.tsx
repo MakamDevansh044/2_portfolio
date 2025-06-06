@@ -1,37 +1,37 @@
 
 import React from 'react';
-import { Code, Brain, Users, Award } from 'lucide-react';
+import { Code, Brain, Users, Award, GraduationCap, Target } from 'lucide-react';
 
 const About = () => {
   const skills = [
     { name: 'Python', level: 95 },
-    { name: 'OpenCV', level: 90 },
-    { name: 'Deep Learning', level: 85 },
-    { name: 'Machine Learning', level: 90 },
+    { name: 'Computer Vision', level: 90 },
+    { name: 'Deep Learning', level: 88 },
+    { name: 'Applied AI Systems', level: 90 },
+    { name: 'Machine Learning', level: 85 },
     { name: 'Blockchain', level: 75 },
-    { name: 'Computer Vision', level: 88 },
   ];
 
   const highlights = [
     {
       icon: <Brain className="text-blue-400" size={24} />,
-      title: 'AI/ML Expertise',
-      description: 'Deep learning, computer vision, and intelligent system development'
+      title: 'AI/ML Innovation',
+      description: 'Building intelligent systems that understand and impact human lives'
     },
     {
       icon: <Code className="text-purple-400" size={24} />,
-      title: 'Technical Skills',
-      description: 'Python, OpenCV, TensorFlow, PyTorch, and modern frameworks'
+      title: 'Technical Excellence',
+      description: 'Python, Computer Vision, Deep Learning with a 9.29 CGPA foundation'
     },
     {
       icon: <Users className="text-green-400" size={24} />,
-      title: 'Leadership',
-      description: 'Events Head of Ramanujan Math Club and Core RMC Member'
+      title: 'Leadership Impact',
+      description: 'President of RMC, Team Lead of Intell Alpha, General Secretary of Neural Nexus'
     },
     {
-      icon: <Award className="text-yellow-400" size={24} />,
-      title: 'Innovation',
-      description: 'Award-winning projects in AI, blockchain, and human-tech interaction'
+      icon: <Target className="text-yellow-400" size={24} />,
+      title: 'Real-World Solutions',
+      description: 'From PRAVAH to DIVA - building technology that serves actual human needs'
     }
   ];
 
@@ -45,7 +45,7 @@ const About = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            A passionate AI/ML developer with a persistent attitude and love for solving complex problems
+            AI/ML enthusiast, creative tech builder, and a leader with a mission to make technology understand humans better
           </p>
         </div>
 
@@ -54,30 +54,52 @@ const About = () => {
           <div className="space-y-8">
             <div className="prose prose-lg text-gray-300">
               <p className="text-lg leading-relaxed">
-                Hi! I'm <span className="text-blue-400 font-semibold">Makam Devansh</span>, 
-                an AI/ML enthusiast and developer with a strong foundation in building intelligent systems. 
-                My journey in technology is driven by an insatiable curiosity and a persistent attitude 
-                towards solving real-world problems.
+                Hey there! I'm <span className="text-blue-400 font-semibold">Makam Devansh</span>, 
+                an AI/ML enthusiast, creative tech builder, and a leader with a mission to make 
+                technology understand humans better.
               </p>
               
               <p className="text-lg leading-relaxed">
-                As the <span className="text-purple-400 font-semibold">Events Head of Ramanujan Math Club</span> 
-                and a <span className="text-green-400 font-semibold">Core RMC Member</span>, I bridge the gap 
-                between theoretical mathematics and practical AI applications. My experience as an intern at 
-                <span className="text-yellow-400 font-semibold"> Infosys & AICTE IDEA Lab</span> has shaped 
-                my understanding of enterprise-level AI solutions.
+                Currently pursuing my degree at <span className="text-purple-400 font-semibold">CBIT</span>, 
+                I've built a strong foundation in Python, Computer Vision, Deep Learning, and Applied AI Systems — 
+                all while maintaining a <span className="text-green-400 font-semibold">CGPA of 9.29</span> and 
+                juggling multiple leadership roles. But I'm not just about scores or syntax. I believe in building things that matter.
               </p>
 
               <p className="text-lg leading-relaxed">
-                I believe in the power of technology to transform lives, and I'm passionate about creating 
-                solutions that make a meaningful impact. Whether it's developing document verification systems 
-                or emotion-based media control, I strive to build technology that serves humanity.
+                Whether it's crafting a document verification system powered by AI & blockchain 
+                (<span className="text-yellow-400 font-semibold">PRAVAH</span>), developing gesture-controlled 
+                face recognition tools, or creating a legal assistant bot (<span className="text-blue-400 font-semibold">DIVA</span>) 
+                for real-world use in police stations — I'm always blending intelligence with impact.
               </p>
+
+              <p className="text-lg leading-relaxed">
+                As the <span className="text-purple-400 font-semibold">President of the Ramanujan Math Club</span>, 
+                <span className="text-green-400 font-semibold"> Team Lead of Intell Alpha</span>, and 
+                <span className="text-blue-400 font-semibold"> General Secretary of Neural Nexus</span>, 
+                I've led national-level events, organized innovation bootcamps, and mentored peers — because I believe 
+                that innovation only scales with community.
+              </p>
+
+              <p className="text-lg leading-relaxed">
+                I don't just code; I design systems, solve real problems, and lead with curiosity. And when I'm not 
+                building the next big thing, you'll find me at the gym, organizing hackathons, or exploring how AI can 
+                meet emotion, logic, and human need at the same intersection.
+              </p>
+
+              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl p-6 border border-blue-500/20">
+                <p className="text-xl font-semibold text-white text-center">
+                  Let's build the future — one crazy, meaningful project at a time. 🚀
+                </p>
+              </div>
             </div>
 
             {/* Skills Progress Bars */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-white mb-6">Technical Skills</h3>
+              <h3 className="text-2xl font-semibold text-white mb-6 flex items-center">
+                <GraduationCap className="text-blue-400 mr-3" size={28} />
+                Technical Skills
+              </h3>
               {skills.map((skill, index) => (
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between text-sm">
