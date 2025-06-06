@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Award, Briefcase, Trophy, Star, ExternalLink, Users, GraduationCap } from 'lucide-react';
+import { Separator } from './ui/separator';
 
 const Achievements = () => {
   const positions = [
@@ -43,6 +44,35 @@ const Achievements = () => {
       description: 'Leading AI research and development initiatives in the intelligence systems team.',
       link: '#',
       icon: <Trophy className="text-red-400" size={24} />
+    }
+  ];
+
+  const experience = [
+    {
+      company: 'Infosys Springboard',
+      role: 'AI/ML Development Intern',
+      period: '2024',
+      description: 'Worked on enterprise-level AI solutions and gained hands-on experience with industry-standard practices.',
+      link: 'https://drive.google.com/file/d/1480xyTkFACoCLBDCVZvxrEXaHmBrFKiN/view?usp=drive_link',
+      achievements: [
+        'Developed ML models for real-world applications',
+        'Collaborated with industry professionals',
+        'Gained exposure to enterprise AI solutions'
+      ],
+      logo: '💼'
+    },
+    {
+      company: 'Rural Internship Program',
+      role: 'Community Technology Volunteer',
+      period: '2024',
+      description: 'Contributed to rural development through technology solutions and community engagement.',
+      link: 'https://drive.google.com/file/d/14jKEQ8LiupsjwiSbnLvBsoBBSt-XzXso/view?usp=drive_link',
+      achievements: [
+        'Implemented tech solutions for rural communities',
+        'Conducted digital literacy workshops',
+        'Bridged technology gap in rural areas'
+      ],
+      logo: '🌾'
     }
   ];
 
@@ -94,35 +124,6 @@ const Achievements = () => {
       description: 'Perfect score achievement in competitive quiz',
       link: '#',
       icon: <Star className="text-yellow-400" size={24} />
-    }
-  ];
-
-  const experience = [
-    {
-      company: 'Infosys Springboard',
-      role: 'AI/ML Development Intern',
-      period: '2024',
-      description: 'Worked on enterprise-level AI solutions and gained hands-on experience with industry-standard practices.',
-      link: 'https://drive.google.com/file/d/1480xyTkFACoCLBDCVZvxrEXaHmBrFKiN/view?usp=drive_link',
-      achievements: [
-        'Developed ML models for real-world applications',
-        'Collaborated with industry professionals',
-        'Gained exposure to enterprise AI solutions'
-      ],
-      logo: '💼'
-    },
-    {
-      company: 'Rural Internship Program',
-      role: 'Community Technology Volunteer',
-      period: '2024',
-      description: 'Contributed to rural development through technology solutions and community engagement.',
-      link: 'https://drive.google.com/file/d/14jKEQ8LiupsjwiSbnLvBsoBBSt-XzXso/view?usp=drive_link',
-      achievements: [
-        'Implemented tech solutions for rural communities',
-        'Conducted digital literacy workshops',
-        'Bridged technology gap in rural areas'
-      ],
-      logo: '🌾'
     }
   ];
 
@@ -187,6 +188,8 @@ const Achievements = () => {
           </div>
         </div>
 
+        <Separator className="my-16 bg-gray-700" />
+
         {/* Professional Experience */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-white mb-8 flex items-center">
@@ -235,6 +238,8 @@ const Achievements = () => {
           </div>
         </div>
 
+        <Separator className="my-16 bg-gray-700" />
+
         {/* Awards & Recognition */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-white mb-8 flex items-center">
@@ -273,6 +278,8 @@ const Achievements = () => {
             ))}
           </div>
         </div>
+
+        <Separator className="my-16 bg-gray-700" />
 
         {/* Certifications Section */}
         <div>
