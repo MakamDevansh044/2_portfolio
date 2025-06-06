@@ -1,50 +1,58 @@
 
-import React from 'react';
-import { Play, Camera, Award, Users } from 'lucide-react';
+import React, { useState } from 'react';
+import { Play, Camera, Award, Users, ExternalLink } from 'lucide-react';
 
 const Media = () => {
+  const [selectedMedia, setSelectedMedia] = useState<any>(null);
+
   const mediaItems = [
     {
       type: 'video',
       title: 'AI Bootcamp Highlights',
       description: 'Behind the scenes of our intensive AI/ML bootcamp',
       thumbnail: 'https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop',
-      date: 'March 2024'
+      date: 'March 2024',
+      url: 'https://www.youtube.com/watch?v=example1'
     },
     {
       type: 'image',
       title: 'Hackathon Victory',
       description: 'Winning the national AI hackathon with PRAVAH',
       thumbnail: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=300&fit=crop',
-      date: 'February 2024'
+      date: 'February 2024',
+      url: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop'
     },
     {
       type: 'video',
       title: 'DIVA Demo Presentation',
       description: 'Live demonstration of our legal AI assistant',
       thumbnail: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop',
-      date: 'January 2024'
+      date: 'January 2024',
+      url: 'https://www.youtube.com/watch?v=example2'
     },
     {
       type: 'image',
       title: 'RMC Leadership Summit',
       description: 'Leading strategic planning for Ramanujan Math Club',
       thumbnail: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop',
-      date: 'December 2023'
+      date: 'December 2023',
+      url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop'
     },
     {
       type: 'video',
       title: 'Tech Innovation Workshop',
       description: 'Teaching computer vision to aspiring developers',
       thumbnail: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop',
-      date: 'November 2023'
+      date: 'November 2023',
+      url: 'https://www.youtube.com/watch?v=example3'
     },
     {
       type: 'image',
       title: 'Research Collaboration',
       description: 'Working with professors on blockchain research',
       thumbnail: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop',
-      date: 'October 2023'
+      date: 'October 2023',
+      url: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop'
     }
   ];
 
@@ -54,6 +62,25 @@ const Media = () => {
     { icon: <Award className="text-green-400" size={24} />, number: '8', label: 'Awards Won' },
     { icon: <Play className="text-yellow-400" size={24} />, number: '25+', label: 'Workshops Conducted' }
   ];
+
+  const handleMediaClick = (item: any) => {
+    if (item.type === 'video') {
+      window.open(item.url, '_blank');
+    } else {
+      setSelectedMedia(item);
+    }
+  };
+
+  const handleViewAllMedia = () => {
+    // Create a simple gallery view or redirect to a media portfolio
+    alert('Redirecting to full media gallery...');
+    // In a real implementation, this could navigate to a dedicated media page
+  };
+
+  const handleFollowJourney = () => {
+    // This could link to social media or a blog
+    alert('Following my journey! Check out my social media links in the contact section.');
+  };
 
   return (
     <section id="media" className="py-20 relative">
@@ -90,7 +117,8 @@ const Media = () => {
           {mediaItems.map((item, index) => (
             <div
               key={index}
-              className="bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105 group"
+              className="bg-slate-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:scale-105 group cursor-pointer"
+              onClick={() => handleMediaClick(item)}
             >
               <div className="relative">
                 <img
@@ -105,6 +133,13 @@ const Media = () => {
                     <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/30">
                       <Play className="text-white ml-1" size={24} />
                     </div>
+                  </div>
+                )}
+
+                {/* External link icon for images */}
+                {item.type === 'image' && (
+                  <div className="absolute top-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ExternalLink className="text-white" size={20} />
                   </div>
                 )}
 
@@ -133,14 +168,46 @@ const Media = () => {
         <div className="text-center mt-12">
           <p className="text-gray-400 mb-6">Want to see more of my work and activities?</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105">
+            <button 
+              onClick={handleViewAllMedia}
+              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105"
+            >
               View All Media
             </button>
-            <button className="px-8 py-3 border border-gray-400 text-gray-300 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 hover:scale-105">
+            <button 
+              onClick={handleFollowJourney}
+              className="px-8 py-3 border border-gray-400 text-gray-300 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 hover:scale-105"
+            >
               Follow My Journey
             </button>
           </div>
         </div>
+
+        {/* Image Modal */}
+        {selectedMedia && (
+          <div 
+            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedMedia(null)}
+          >
+            <div className="relative max-w-4xl max-h-[90vh] overflow-hidden rounded-lg">
+              <img
+                src={selectedMedia.url}
+                alt={selectedMedia.title}
+                className="w-full h-full object-contain"
+              />
+              <button
+                onClick={() => setSelectedMedia(null)}
+                className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 transition-colors"
+              >
+                ×
+              </button>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                <h3 className="text-white text-xl font-bold mb-2">{selectedMedia.title}</h3>
+                <p className="text-gray-300 text-sm">{selectedMedia.description}</p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
