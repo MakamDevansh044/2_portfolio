@@ -17,10 +17,11 @@ const Navigation = () => {
   const navItems = [
     { href: '#about', label: 'About' },
     { href: '#projects', label: 'Projects' },
-    { href: '#leadership', label: 'Leadership' },
+    { href: '#experience', label: 'Experience/Positions' },
     { href: '#research', label: 'Research' },
-    { href: '#media', label: 'Media' },
     { href: '#achievements', label: 'Achievements' },
+    { href: '#certifications', label: 'Certifications' },
+    { href: '#media', label: 'Media' },
     { href: '#contact', label: 'Contact' },
   ];
 

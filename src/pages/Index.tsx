@@ -3,10 +3,11 @@ import React from 'react';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Projects from '../components/Projects';
-import Leadership from '../components/Leadership';
+import Experience from '../components/Experience';
 import Research from '../components/Research';
-import Media from '../components/Media';
 import Achievements from '../components/Achievements';
+import Certifications from '../components/Certifications';
+import Media from '../components/Media';
 import Contact from '../components/Contact';
 import Navigation from '../components/Navigation';
 
@@ -17,10 +18,11 @@ const Index = () => {
       <Hero />
       <About />
       <Projects />
-      <Leadership />
+      <Experience />
       <Research />
-      <Media />
       <Achievements />
+      <Certifications />
+      <Media />
       <Contact />
     </div>
   );
